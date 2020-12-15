@@ -1,0 +1,42 @@
+<h3>Add Consultant</h3>
+<div class="row">
+    {{!-- {{POST - Create}} --}}
+    <form action="/consultant" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id='name' name="name">
+                <label for="name">Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="sex" name="sex">
+                    <option value="F">F</option>
+                    <option value="M">M</option>
+                </select>
+                <label for="sex">Sex</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id='location' name="location">
+                <label for="location">Location</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id='rating' name="rating">
+                <label for="rating">Rating</label>
+            </div>
+        </div>
+            
+        {{!-- {{Save Cancel button}} --}}
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

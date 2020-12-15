@@ -1,0 +1,29 @@
+<h6>You're on Dashboard</h6>
+<h3>Welcome dear {{name}}</h3>
+<p>Hello! Come find your best consultant and go solve the problem!</p>
+
+{{#if Consultant}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Location</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each Consultant}}
+        <tr>
+            <td><a href="/Consultant/{{_id}}">{{name}}</a></td>
+            <td><span class="dash-status">{{sex}}</span></td>
+            <td><span class="dash-status">{{location}}</span></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{else}}
+    <p>Sorry, no consultants found</p>
+{{/if}}
