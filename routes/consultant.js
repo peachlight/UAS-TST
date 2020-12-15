@@ -26,19 +26,17 @@ router.post('/', ensureAuth, async (req, res) => {
 // @route   GET /consultants
 router.get('/', ensureAuth, async (req, res) => {
   try {
-    const consultants = await Consultants.find()
+    const consultants = await Consultant.find()
       .populate('user')
       .lean()
 
     res.render('consultants/index', {
-      stories,
+      consultants,
     })
   } catch (err) {
     console.error(err)
     res.render('error/500')
   }
 })
-
-
 
 module.exports = router

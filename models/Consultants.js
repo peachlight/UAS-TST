@@ -5,7 +5,7 @@ const ConsultantSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      name: {
+      cname: {
         type: String,
         required: true,
       },
