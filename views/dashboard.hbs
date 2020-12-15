@@ -2,7 +2,7 @@
 <h3>Welcome dear {{name}}</h3>
 <p>Hello! Come find your best consultant and go solve the problem!</p>
 
-{{#if Consultant}}
+{{#if consultants}}
 <table class="striped">
     <thead>
         <tr>
@@ -14,9 +14,9 @@
         </tr>
     </thead>
     <tbody>
-        {{#each Consultant}}
+        {{#each consultants}}
         <tr>
-            <td><a href="/Consultant/{{_id}}">{{name}}</a></td>
+            <td><a href="/consultant/{{_id}}">{{name}}</a></td>
             <td><span class="dash-status">{{sex}}</span></td>
             <td><span class="dash-status">{{location}}</span></td>
         </tr>

@@ -19,7 +19,7 @@ const ConsultantSchema = new mongoose.Schema({
         required: true,
       },
       rating: {
-        type: Boolean,
+        type: Number,
         required: true,
       },
       cp: {
