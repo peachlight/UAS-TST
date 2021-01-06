@@ -1,0 +1,59 @@
+<h3>Edit Consultant</h3>
+<div class="row">
+    {{!-- {{PUT - Update}} --}}
+    <form action="/consultant/{{consultants._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id='idConsult' name="idConsult" value="{{consultants.idConsult}}">
+                <label for="idConsult">International ID</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id='cname' name="cname" value="{{consultants.cname}}">
+                <label for="cname">Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="sex" name="sex">
+                    {{#select consultants.sex}}
+                    <option value="F" selected>F</option>
+                    <option value="M">M</option>
+                    {{/select}}
+                </select>
+                <label for="sex">Sex</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id='location' name="location" value="{{consultants.location}}">
+                <label for="location">Location</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id='rating' name="rating" value="{{consultants.rating}}">
+                <label for="rating">Rating</label>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id='cp' name="cp" value="{{consultants.cp}}">
+                <label for="cp">Contact Person</label>
+            </div>
+        </div>
+
+        {{!-- {{Save Cancel button}} --}}
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/consultant/{{consultants._id}}" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

@@ -28,4 +28,4 @@ const ConsultantSchema = new mongoose.Schema({
       },
     })
     
-module.exports = mongoose.model('Consultant', ConsultantSchema)
+module.exports = mongoose.model('Consultants', ConsultantSchema)

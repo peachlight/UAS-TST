@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col s12 m8">
+        <h3>{{consultants.cname}}</h3>
+        <div class="card story">
+            <div class="card-content">
+                Name: {{{consultants.cname}}}
+                <br>
+                ID: {{{consultants.idConsult}}}
+                <br>
+                Sex: {{{consultants.sex}}}
+                <br>
+                Location: {{{consultants.location}}}
+                <br>
+                Rating: {{{consultants.rating}}}
+                <br>
+                Contact Person: {{{consultants.cp}}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <a href="/dashboard" class="btn">Back to Dashboard</a>
+    <a href="/consultant/edit/{{consultants._id}}" class="btn orange">Edit</a>
+</div>
+
+<br>
+
+<form action="/consultant/delete/{{consultants._id}}" method="POST" id="delete-form">
+   <input type="hidden" name="_method" value="DELETE">
+   <button type="submit" class="btn red">Delete</button>
+</form>

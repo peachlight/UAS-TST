@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-const Consultant = require('../models/Consultants')
+const Consultants = require('../models/Consultants')
 
 // @desc    Login/Landing page
 // @route   GET /
@@ -16,9 +16,10 @@ router.get('/', ensureGuest, (req, res) => {
 // @route   GET /dashboard
 router.get('/dashboard', ensureAuth, async (req, res) => {
   try {
-    const consultants = await Consultant.find({ user: req.user.id }).lean() //Ubah ini nanti
+    const name = req.user.displayName;
+    const consultants = await Consultants.find().lean()
     res.render('dashboard', {
-      consultants,
+      consultants, name
     })
   } catch (err) {
     console.error(err)
